@@ -1,0 +1,36 @@
+name: pipeline
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+
+permissions:
+  contents: write
+
+# One writer at a time: the rally workflow commits to the same branch.
+concurrency:
+  group: profile-writes
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pipeline
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+        run: python3 scripts/pipeline.py
+      - name: Commit changes
+        run: |
+          git config user.name "profile-pipeline[bot]"
+          git config user.email "profile-pipeline@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "pipeline: nightly run"
+          git pull --rebase
+          git push

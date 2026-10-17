@@ -1,0 +1,55 @@
+name: rally
+
+on:
+  issues:
+    types: [opened]
+  schedule:
+    - cron: "5 * * * *"
+  workflow_dispatch:
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: profile-writes
+  cancel-in-progress: false
+
+jobs:
+  rally:
+    # Only issues titled exactly "bump" play; everything else is ignored.
+    if: github.event_name != 'issues' || github.event.issue.title == 'bump'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hit the ball
+        if: github.event_name == 'issues'
+        env:
+          PLAYER: ${{ github.event.issue.user.login }}
+        run: python3 scripts/rally.py bump --player "$PLAYER" --message-file "$RUNNER_TEMP/msg.txt"
+
+      - name: Hourly check
+        if: github.event_name != 'issues'
+        run: python3 scripts/rally.py tick
+
+      - name: Commit changes
+        run: |
+          git config user.name "rally[bot]"
+          git config user.email "rally@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "rally: update"
+          git pull --rebase
+          git push
+
+      - name: Reply and close
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/msg.txt"
+          gh issue close "$ISSUE" --reason completed
