@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-17 18:04 UTC",
+ "built_at": "2026-10-17 18:07 UTC",
  "name": "shubham mohape",
  "repos": [
   {
@@ -248,10 +248,10 @@
    "fork": false,
    "homepage": null,
    "id": 822725851,
-   "language": "n/a",
+   "language": "Python",
    "name": "shubhammohape",
-   "pushed_at": "2024-07-02T17:21:44Z",
-   "score": 0,
+   "pushed_at": "2026-10-17T18:07:20Z",
+   "score": 1,
    "size": 13,
    "stargazers_count": 0,
    "tier": "bronze",
@@ -304,19 +304,19 @@
   }
  ],
  "stats": {
-  "active": 239,
+  "active": 240,
   "avg": 4.6,
   "best": 19,
   "best_date": "2026-04-22",
-  "current": 4,
+  "current": 5,
   "days": 371,
-  "last_active": "2026-10-16",
-  "last_count": 12,
+  "last_active": "2026-10-17",
+  "last_count": 1,
   "longest": 6,
   "longest_end": "2025-11-01",
   "longest_start": "2025-10-27",
   "top_month": "2026-04",
   "top_weekday": "THU",
-  "total": 1099
+  "total": 1100
  }
 }
