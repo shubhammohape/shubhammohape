@@ -1,0 +1,81 @@
+{
+ "as_of": "2026-10-17",
+ "window_days": 365,
+ "raised": 304,
+ "reviewed": 456,
+ "merged_pct": 87,
+ "median_hours_to_merge": 14.2,
+ "median_additions": 36,
+ "median_deletions": 7,
+ "median_files": 2,
+ "small_pct": 59,
+ "reviewed_before_merge_pct": 90,
+ "reviews_per_pr": 1.5,
+ "monthly": [
+  {
+   "m": "2025-10",
+   "raised": 12,
+   "reviewed": 6
+  },
+  {
+   "m": "2025-11",
+   "raised": 29,
+   "reviewed": 40
+  },
+  {
+   "m": "2025-12",
+   "raised": 18,
+   "reviewed": 21
+  },
+  {
+   "m": "2026-01",
+   "raised": 16,
+   "reviewed": 26
+  },
+  {
+   "m": "2026-02",
+   "raised": 22,
+   "reviewed": 32
+  },
+  {
+   "m": "2026-03",
+   "raised": 17,
+   "reviewed": 37
+  },
+  {
+   "m": "2026-04",
+   "raised": 36,
+   "reviewed": 59
+  },
+  {
+   "m": "2026-05",
+   "raised": 16,
+   "reviewed": 36
+  },
+  {
+   "m": "2026-06",
+   "raised": 23,
+   "reviewed": 40
+  },
+  {
+   "m": "2026-07",
+   "raised": 36,
+   "reviewed": 41
+  },
+  {
+   "m": "2026-08",
+   "raised": 26,
+   "reviewed": 42
+  },
+  {
+   "m": "2026-09",
+   "raised": 35,
+   "reviewed": 48
+  },
+  {
+   "m": "2026-10",
+   "raised": 18,
+   "reviewed": 28
+  }
+ ]
+}

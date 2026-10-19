@@ -42,8 +42,8 @@ def screw(x, y, ang=30):
             f'<line x1="{x - dx:.1f}" y1="{y - dy:.1f}" x2="{x + dx:.1f}" y2="{y + dy:.1f}" stroke="#0b0c0f" stroke-width="1.4"/>')
 
 
-def engraved(x, y, s, size, fill, anchor="start", weight="700", spacing=0):
-    sp = f' letter-spacing="{spacing}"' if spacing else ""
+def engraved(x, y, s, size, fill, anchor="start", weight="700", spacing=0, stencil=False):
+    sp = (f' letter-spacing="{spacing}"' if spacing else "") + (' data-font="stencil"' if stencil else "")
     return (f'<text x="{x + 1:.1f}" y="{y + 1.4:.1f}" fill="#000" fill-opacity=".75" font-size="{size}" text-anchor="{anchor}" font-weight="{weight}" font-family="{FONT}"{sp}>{escape(s)}</text>'
             f'<text x="{x:.1f}" y="{y:.1f}" fill="{fill}" font-size="{size}" text-anchor="{anchor}" font-weight="{weight}" font-family="{FONT}"{sp}>{escape(s)}</text>')
 
@@ -92,7 +92,7 @@ def control_svg(results, checks, history, repos, ts, schedule, W=900, H=244):
          f'<rect x="8" y="14" width="{W - 16}" height="{H - 22}" rx="9" fill="none" stroke="#fff" stroke-opacity=".05"/>']
     for x, y, a in ((20, 26, 20), (W - 20, 26, 70), (20, H - 14, 120), (W - 20, H - 14, 160)):
         o.append(screw(x, y, a))
-    o.append(engraved(44, 38, "CONTROL ROOM", 14, P["mustard"], spacing=4))
+    o.append(engraved(44, 40, "CONTROL ROOM", 20, P["mustard"], spacing=3, stencil=True))
     o.append(txt(W - 44, 38, f"schedule {schedule}  ·  {ts}", P["muted"], 10.5, "end"))
     o.append(engraved(28, 70, "DATA-QUALITY TESTS", 10, P["muted"], spacing=2))
     for i, (name, status, detail) in enumerate(checks[:4]):

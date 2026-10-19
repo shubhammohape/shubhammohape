@@ -1,0 +1,28 @@
+{
+ "name": "Shubham Mohape",
+ "tagline": "data engineer · pipelines, scraping, ML ops · Mumbai",
+ "about": [
+  "I design, build and maintain **data pipelines**, scrape the awkward corners of the web, and turn messy datasets into something people can act on.",
+  "Day to day I **raise PRs and review even more of them**: small, focused changes and honest feedback.",
+  "Off the clock: gaming, **volleyball**, and protecting work-life balance. B.E. Computer Engineering, 2022."
+ ],
+ "projects": [
+  {"repo": "Bhavgeet", "note": "An AI tool that predicts a music playlist from your emotions."},
+  {"repo": "Faculty-Expertise", "note": "A website that helps faculty manage their data in one place."},
+  {"repo": "Breakout-Ball", "note": "A retro Breakout game, written in Java."},
+  {"repo": "face_reginition", "note": "Face recognition with OpenCV and Haar cascades."},
+  {"repo": "Music_Player", "note": "A music player that plays music for any keyword you search."},
+  {"repo": "Result_Extraction", "note": "Turns result PDFs into Excel sheets."}
+ ],
+ "stack": ["python", "apachespark", "databricks", "snowflake", "cockroachlabs", "mysql", "selenium", "playwright", "docker", "kubernetes", "helm", "githubactions", "pytest", "git", "aws", "azure", "langchain"],
+ "writing": [
+  {"title": "RAG Using Langchain", "url": "https://python.plainenglish.io/rag-using-langchain-c371fcd02d13"},
+  {"title": "Langchain for Web Scraping", "url": "https://python.plainenglish.io/langchain-for-web-scraping-988027d1fed5"},
+  {"title": "Zero-shot, Few-shot, and Chain of Thought Prompt", "url": "https://python.plainenglish.io/zero-shot-few-shot-and-chain-of-thought-prompt-92596a7a1d59"}
+ ],
+ "contact": [
+  {"label": "PORTFOLIO", "value": "shubhammohape.github.io/portfolio", "url": "https://shubhammohape.github.io/portfolio/"},
+  {"label": "EMAIL", "value": "shubham.mohapess@gmail.com", "url": "mailto:shubham.mohapess@gmail.com"},
+  {"label": "GITHUB", "value": "github.com/shubhammohape", "url": "https://github.com/shubhammohape"}
+ ]
+}

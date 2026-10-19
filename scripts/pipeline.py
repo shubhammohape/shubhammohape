@@ -3,23 +3,22 @@
 
 extract (GitHub API + the public contribution calendar) -> clean -> enrich (medallion tiers,
 yearly stats) -> load (lake + data-quality tests) -> serve (images + README). Every run is timed
-and recorded; the refinery, control room, flip-disc board and SQL console on the profile are drawn
+and recorded; the refinery, control room and flip-disc board on the profile are drawn
 from that record, so a red lamp is a real failure. Standard library only.
 """
 import json
 import os
 import re
 import time
-import urllib.parse
 import urllib.request
 from datetime import date, datetime, timezone
-from html import escape
 from pathlib import Path
 
+import panels
+import typeset
 from contrib import blank_year, board_svg, fetch_calendar, summarize
 from control import control_svg
 from refinery import refinery_svg
-from sqlbot import PRESETS, console_svg
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA, ASSETS = ROOT / "data", ROOT / "assets"
@@ -160,8 +159,7 @@ def load(ctx):
 
 
 def serve(ctx):
-    """Render everything from the in-memory run (provisional serve result) and refresh the README tables."""
-    update_readme(ctx["repos"])
+    """Render everything from the in-memory run (provisional serve result), including the README."""
     render_all(ctx, ctx["results"] + [{"name": "serve", "status": "ok", "secs": 0.0,
                                        "rows_in": len(ctx["repos"]), "rows_out": len(ctx["repos"])}],
                ctx["history"] + [stub_entry(ctx["results"], "ok")])
@@ -217,44 +215,67 @@ def main():
 
 
 def board_name(ctx):
-    first = re.sub(r"[^A-Za-z0-9]", "", (ctx.get("profile_name") or USER).split()[0]) if (ctx.get("profile_name") or USER).split() else USER
+    words = (ctx.get("profile_name") or USER).split()
+    first = re.sub(r"[^A-Za-z0-9]", "", words[0]) if words else USER
     return (first or USER).upper()[:9]
 
 
+def load_json(path, default):
+    p = DATA / path
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
+
+
 def render_all(ctx, results, history):
+    """Draw every image (all text as outlines) and rewrite the README from data/profile.json."""
     ASSETS.mkdir(exist_ok=True)
     ts = history[-1]["ts"] if history else now_iso()
     checks = ctx.get("checks", [])
     days = ctx.get("calendar") or blank_year()
     stats = ctx.get("stats") or summarize(days)
-    (ASSETS / "refinery.svg").write_text(refinery_svg(results, checks, ctx["repos"], ts))
-    (ASSETS / "control.svg").write_text(control_svg(results, checks, history, ctx["repos"], ts, SCHEDULE))
-    (ASSETS / "contributions.svg").write_text(board_svg(days, stats, ts, board_name(ctx)))
-    (ASSETS / "console.svg").write_text(console_svg(ctx["repos"], ctx.get("events", []), history, ts, days))
+    cfg = load_json("profile.json", {})
+    work = load_json("work.json", None)
+    icons = json.loads((Path(__file__).with_name("icons.json")).read_text())
+    by_name = {r["name"]: r for r in ctx["repos"]}
+    images = {
+        "refinery.svg": refinery_svg(results, checks, ctx["repos"], ts, name=cfg.get("name", USER).upper(), tagline=cfg.get("tagline", "")),
+        "control.svg": control_svg(results, checks, history, ctx["repos"], ts, SCHEDULE),
+        "contributions.svg": board_svg(days, stats, ts, board_name(ctx)),
+    }
+    if cfg:
+        synced = datetime.fromisoformat(work["as_of"]).strftime("%b %-d") if work else ""
+        images.update(panels.build_all(cfg, work, by_name, USER, icons, synced))
+        images["legacy.svg"] = panels.legacy_svg(cfg)
+    if not work:
+        images.pop("desk.svg", None)
+    for name, svg in images.items():
+        (ASSETS / name).write_text(typeset.outline(svg), encoding="utf-8")
+    if cfg:
+        write_readme(cfg, images, bool(work))
 
 
 # ------------------------------------------------------------------ README
-def update_readme(repos):
-    path = ROOT / "README.md"
-    if not path.exists():
-        return
-    rank = {"gold": 0, "silver": 1, "bronze": 2}
-    top = sorted((r for r in repos if r["tier"] != "bronze"),
-                 key=lambda r: (rank[r["tier"]], -r["score"], r["name"]))[:8]
-    lines = ["| tier | repo | language | what it is |", "|---|---|---|---|"]
-    for r in top:
-        desc = escape(r["description"] or "–").replace("|", "/")
-        lines.append(f"| {r['tier']} | [{r['name']}](https://github.com/{USER}/{r['name']}) | {r['language']} | {desc} |")
+def alt_of(svg):
+    m = re.search(r'aria-label="([^"]*)"', svg)
+    return m.group(1) if m else ""
 
-    body = urllib.parse.quote("Press **Submit new issue**. A workflow runs the query and replies here in about 30 seconds.", safe="")
-    links = " · ".join(
-        f"[`{label}`](https://github.com/{USER}/{USER}/issues/new?title={urllib.parse.quote('sql: ' + sql, safe='')}&body={body})"
-        for label, sql in PRESETS)
-    text = path.read_text()
-    for tag, block in (("LAKE", "\n".join(lines)), ("SQL", f"**One-click queries:** {links}")):
-        text = re.sub(rf"<!--{tag}:START-->.*?<!--{tag}:END-->",
-                      lambda _, t=tag, b=block: f"<!--{t}:START-->\n{b}\n<!--{t}:END-->", text, flags=re.S)
-    path.write_text(text)
+
+def write_readme(cfg, images, has_desk):
+    """The README is just the panels, in order. All the words live in the images (see typeset.py)."""
+    def img(name, width="100%"):
+        return f'<img src="assets/{name}" width="{width}" alt="{alt_of(images[name])}">'
+
+    def link(url, name, width="100%"):
+        return f'<a href="{url}">{img(name, width)}</a>'
+
+    out = ['<div align="center">', "", img("refinery.svg"), img("control.svg"), "", img("about.svg"), "", img("contributions.svg"), ""]
+    if has_desk:
+        out += [img("desk.svg"), ""]
+    out += [img("head-workshop.svg")]
+    out += [link(f"https://github.com/{USER}/{p['repo']}", f"project-{i}.svg") for i, p in enumerate(cfg["projects"], 1)]
+    out += ["", img("stack.svg"), "", img("head-writing.svg")]
+    out += [link(w["url"], f"writing-{i}.svg") for i, w in enumerate(cfg["writing"], 1)]
+    out += [""] + [link(c["url"], f"contact-{i}.svg", "32%") for i, c in enumerate(cfg["contact"], 1)] + ["", "</div>", ""]
+    (ROOT / "README.md").write_text("\n".join(out), encoding="utf-8")
 
 
 if __name__ == "__main__":

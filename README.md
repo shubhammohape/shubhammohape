@@ -1,97 +1,31 @@
 <div align="center">
 
-# Shubham Mohape
+<img src="assets/refinery.svg" width="100%" alt="Shubham Mohape: data engineer · pipelines, scraping, ML ops · Mumbai. A realistic 3D isometric data refinery that is this profile's own nightly pipeline: GitHub API tower, bronze vat, clean filter, silver vat, enrich column, gold tank, a serve mast and a flare stack. Status: all systems nominal; pilot light only. Last run 2026-10-19 05:01 UTC.">
+<img src="assets/control.svg" width="100%" alt="Control room: four data-quality gauges (freshness, volume, schema, uniqueness) and an LED history of each pipeline task over the last 30 runs.">
 
-**Data engineer** · pipelines, scraping, ML ops · Mumbai
+<img src="assets/about.svg" width="100%" alt="About Shubham Mohape. I design, build and maintain data pipelines, scrape the awkward corners of the web, and turn messy datasets into something people can act on. Day to day I raise PRs and review even more of them: small, focused changes and honest feedback. Off the clock: gaming, volleyball, and protecting work-life balance. B.E. Computer Engineering, 2022.">
 
-<img src="assets/refinery.svg" width="100%" alt="A 3D isometric data refinery that is this profile's own nightly pipeline: GitHub API, bronze vat, clean filter, silver vat, enrich column, gold tank and a serve beacon.">
-<img src="assets/control.svg" width="100%" alt="Control room: four data-quality gauges and the status of each pipeline task over the last 30 runs.">
+<img src="assets/contributions.svg" width="100%" alt="A flip-disc display board showing 1095 contributions over the last year as a heat map of 366 discs, then flipping to messages: 1095/YEAR, 236 DAYS, PEAK 19, SHUBHAM. Busiest weekday THU, best day 19, 236 active days, longest streak 6 days.">
+
+<img src="assets/desk.svg" width="100%" alt="How I work: in the last 12 months I raised 304 pull requests and reviewed 456; 87% of mine merge, median time to merge 14 hours, a typical PR is +36 −7 lines across 2 files, and I review about 1.5 PRs for every one I raise.">
+
+<img src="assets/head-workshop.svg" width="100%" alt="The Workshop. things I build for fun and to learn">
+<a href="https://github.com/shubhammohape/Bhavgeet"><img src="assets/project-1.svg" width="100%" alt="Bhavgeet (TypeScript): An AI tool that predicts a music playlist from your emotions."></a>
+<a href="https://github.com/shubhammohape/Faculty-Expertise"><img src="assets/project-2.svg" width="100%" alt="Faculty-Expertise (PHP): A website that helps faculty manage their data in one place."></a>
+<a href="https://github.com/shubhammohape/Breakout-Ball"><img src="assets/project-3.svg" width="100%" alt="Breakout-Ball (Java): A retro Breakout game, written in Java."></a>
+<a href="https://github.com/shubhammohape/face_reginition"><img src="assets/project-4.svg" width="100%" alt="face_reginition (Python): Face recognition with OpenCV and Haar cascades."></a>
+<a href="https://github.com/shubhammohape/Music_Player"><img src="assets/project-5.svg" width="100%" alt="Music_Player (CSS): A music player that plays music for any keyword you search."></a>
+<a href="https://github.com/shubhammohape/Result_Extraction"><img src="assets/project-6.svg" width="100%" alt="Result_Extraction (Jupyter Notebook): Turns result PDFs into Excel sheets."></a>
+
+<img src="assets/stack.svg" width="100%" alt="Stack: Python, PySpark, Databricks, Snowflake, CockroachDB, MySQL, Selenium, Playwright, Docker, Kubernetes, Helm, GitHub Actions, pytest, Git, AWS, Azure, LangChain">
+
+<img src="assets/head-writing.svg" width="100%" alt="Writing. notes on RAG, LangChain and prompting">
+<a href="https://python.plainenglish.io/rag-using-langchain-c371fcd02d13"><img src="assets/writing-1.svg" width="100%" alt="Article 1: RAG Using Langchain"></a>
+<a href="https://python.plainenglish.io/langchain-for-web-scraping-988027d1fed5"><img src="assets/writing-2.svg" width="100%" alt="Article 2: Langchain for Web Scraping"></a>
+<a href="https://python.plainenglish.io/zero-shot-few-shot-and-chain-of-thought-prompt-92596a7a1d59"><img src="assets/writing-3.svg" width="100%" alt="Article 3: Zero-shot, Few-shot, and Chain of Thought Prompt"></a>
+
+<a href="https://shubhammohape.github.io/portfolio/"><img src="assets/contact-1.svg" width="32%" alt="Portfolio: shubhammohape.github.io/portfolio"></a>
+<a href="mailto:shubham.mohapess@gmail.com"><img src="assets/contact-2.svg" width="32%" alt="Email: shubham.mohapess@gmail.com"></a>
+<a href="https://github.com/shubhammohape"><img src="assets/contact-3.svg" width="32%" alt="Github: github.com/shubhammohape"></a>
 
 </div>
-
-I design, build and maintain data pipelines, and I turn messy datasets into something people can act on.
-So instead of a banner, this profile is a pipeline.
-
-Every night a GitHub Action extracts my repos and activity from the GitHub API, drops forks and duplicates,
-scores each repo into a medallion tier (**bronze**, **silver**, **gold**), writes the layers to [`data/`](data),
-runs freshness, volume, schema and uniqueness tests, and redraws the refinery above. Each unit is a pipeline task,
-and everything you can see is data from the last real run: the plaques, the fill level in each vat, the lamps, the sight
-glasses (mustard liquid flows only when the task succeeded) and the valves (open hand wheel = task ok, red = closed).
-The flare stack burns off warnings: a pilot light when everything is clean, a bigger flame when a test warns, a roaring one
-when a unit is down. If a task fails its lamp goes red, it leaks, and everything downstream goes dark.
-The camera sway is real 3D: ladders, rails, bolts and the lattice mast are re-projected every frame and morphed in plain SVG, with no JavaScript.
-
-<!--LAKE:START-->
-| tier | repo | language | what it is |
-|---|---|---|---|
-| gold | [Faculty-Expertise](https://github.com/shubhammohape/Faculty-Expertise) | PHP | The Website that will help RAIT faculty to manage their data in one place |
-| gold | [Bhavgeet](https://github.com/shubhammohape/Bhavgeet) | TypeScript | An AI tool  that predict Music Playlist Based on Human Emotions |
-| gold | [Data_extraction](https://github.com/shubhammohape/Data_extraction) | TeX | exe file that extract application  name  its version host name and serial number when executed |
-| gold | [Fastapi](https://github.com/shubhammohape/Fastapi) | Python | Simple student database using fastapi |
-| gold | [Music_Player](https://github.com/shubhammohape/Music_Player) | CSS | A music player that plays music based on a keyword searched. |
-| gold | [Result_Extraction](https://github.com/shubhammohape/Result_Extraction) | Jupyter Notebook | pdf to excel extraction |
-| gold | [face_reginition](https://github.com/shubhammohape/face_reginition) | Python | Face recognition using opencv and harrcascade |
-| gold | [portfolio](https://github.com/shubhammohape/portfolio) | HTML | Personal Website for some crazy shit!!!! |
-<!--LAKE:END-->
-
-## A year of output
-
-<div align="center">
-<img src="assets/contributions.svg" width="100%" alt="A flip-disc display board showing a year of contributions as a heat map, one disc per day, which flips into messages made from the real numbers and back.">
-</div>
-
-That's the calendar GitHub draws as green squares, rebuilt as a flip-disc sign: one disc per day, 53 weeks by 7 days,
-so 371 discs. A brighter mustard disc is a busier day. Every few seconds the board refreshes column by column, like the
-real thing, and spells out a number from my own year (total, active days, best day, my name) before flipping back.
-Same public data as the green graph, rebuilt every night by the pipeline; nothing is hand-edited.
-
-## Query the lake
-
-<div align="center">
-<img src="assets/console.svg" width="100%" alt="A SQL console over this profile's data showing the query of the day and its result.">
-</div>
-
-The same lake is queryable. Open an issue and a workflow runs your SQL against it (read-only SQLite, one `SELECT` per
-issue, three seconds, forty rows) and replies with the result table.
-
-<!--SQL:START-->
-**One-click queries:** [`tiers`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20tier%2C%20COUNT%28%2A%29%20AS%20repos%2C%20CAST%28AVG%28size_kb%29%20AS%20INT%29%20AS%20avg_kb%20FROM%20repos%20GROUP%20BY%20tier%20ORDER%20BY%20repos%20DESC&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.) · [`languages`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20language%2C%20COUNT%28%2A%29%20AS%20repos%20FROM%20repos%20GROUP%20BY%20language%20ORDER%20BY%20repos%20DESC%20LIMIT%205&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.) · [`biggest`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20name%2C%20size_kb%2C%20tier%20FROM%20repos%20ORDER%20BY%20size_kb%20DESC%20LIMIT%205&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.) · [`dormant`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20name%2C%20SUBSTR%28pushed_at%2C%201%2C%2010%29%20AS%20last_push%20FROM%20repos%20ORDER%20BY%20pushed_at%20LIMIT%205&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.) · [`pipeline`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20ts%2C%20extract%2C%20clean%2C%20enrich%2C%20load%2C%20serve%20FROM%20runs%20ORDER%20BY%20ts%20DESC%20LIMIT%205&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.) · [`busiest`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20date%2C%20weekday%2C%20count%20FROM%20days%20ORDER%20BY%20count%20DESC%20LIMIT%205&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.) · [`weekdays`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20weekday%2C%20SUM%28count%29%20AS%20total%2C%20ROUND%28AVG%28count%29%2C%201%29%20AS%20per_day%20FROM%20days%20GROUP%20BY%20weekday%20ORDER%20BY%20total%20DESC&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.) · [`months`](https://github.com/shubhammohape/shubhammohape/issues/new?title=sql%3A%20SELECT%20month%2C%20SUM%28count%29%20AS%20total%2C%20COUNT%28%2A%29%20FILTER%20%28WHERE%20count%20%3E%200%29%20AS%20active%20FROM%20days%20GROUP%20BY%20month%20ORDER%20BY%20total%20DESC%20LIMIT%206&body=Press%20%2A%2ASubmit%20new%20issue%2A%2A.%20A%20workflow%20runs%20the%20query%20and%20replies%20here%20in%20about%2030%20seconds.)
-<!--SQL:END-->
-
-Or write your own: title the issue `sql: SELECT ...`. Tables: `repos`, `events`, `runs` and `days` (one row per day of the contribution calendar).
-
-## Keep the rally alive 🏐
-
-<div align="center">
-<img src="assets/rally.svg" width="100%" alt="Volleyball rally counter with a court, two players and a ball in flight.">
-</div>
-
-**[→ Bump the ball](https://github.com/shubhammohape/shubhammohape/issues/new?title=bump&body=Just+hit+Submit.+The+workflow+does+the+rest.)**
-opens a pre-filled issue; submit it and a workflow hits the ball (about 30 seconds). You can't hit it twice in a row,
-and if nobody touches it for 24 hours the ball drops and the rally resets.
-
-## Stack
-
-<p>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="36" height="36"/>
-  <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="Selenium" width="36" height="36"/>
-  <img src="https://playwright.dev/img/playwright-logo.svg" alt="Playwright" width="36" height="36"/>
-  <img src="https://www.vectorlogo.zone/logos/databricks/databricks-icon.svg" alt="Databricks" width="36" height="36"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" alt="PySpark" width="36" height="36"/>
-  <img src="https://www.vectorlogo.zone/logos/cockroachlabs/cockroachlabs-icon.svg" alt="CockroachDB" width="36" height="36"/>
-  <img src="https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg" alt="Snowflake" width="36" height="36"/>
-  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="36" height="36"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="36" height="36"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg" alt="Azure" width="36" height="36"/>
-</p>
-
-## Writing
-
-- [RAG Using Langchain](https://python.plainenglish.io/rag-using-langchain-c371fcd02d13)
-- [Langchain for Web Scraping](https://python.plainenglish.io/langchain-for-web-scraping-988027d1fed5)
-- [Zero-shot, Few-shot, and Chain of Thought Prompt](https://python.plainenglish.io/zero-shot-few-shot-and-chain-of-thought-prompt-92596a7a1d59)
-
-## Off the clock
-
-Gaming, volleyball, and protecting work-life balance. B.E. Computer Engineering (2022). Always up for
-collaboration on data engineering. Open an issue or reach out.

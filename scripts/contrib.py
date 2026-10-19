@@ -247,8 +247,8 @@ def board_svg(days, stats, ts, name, W=900, animate=True, cycle=26.0, cfg=None):
              + '</polygon></g>')
     # furniture: nameplate, status lamp, screws, conduit
     o.append(f'<rect x="40" y="{fy + 14}" width="212" height="22" rx="4" fill="#0b0c0f" stroke="#59627a" stroke-opacity=".6"/>')
-    o.append(_engraved(52, fy + 29.5, "OUTPUT BOARD  FD-371", 11, P["mustard"], 2.2))
-    o.append(f'<text x="{W - 104}" y="{fy + 29.5}" fill="{P["muted"]}" font-size="10" text-anchor="end" font-family="{FONT}">last 12 months · {escape(ts)}</text>')
+    o.append(_engraved(52, fy + 31, "A YEAR OF OUTPUT", 17, P["mustard"], 2.5, stencil=True))
+    o.append(f'<text x="{W - 104}" y="{fy + 29.5}" fill="{P["muted"]}" font-size="10" text-anchor="end" font-family="{FONT}">FD-371 · last 12 months · {escape(ts)}</text>')
     o.append(f'<circle cx="{W - 76}" cy="{fy + 25}" r="11" fill="url(#bs_led_glow)"><animate attributeName="opacity" values="1;.55;1" dur="2.4s" repeatCount="indefinite"/></circle>'
              f'<circle cx="{W - 76}" cy="{fy + 25}" r="4.6" fill="{P["mustard_hi"]}" stroke="#050608"/>'
              f'<text x="{W - 62}" y="{fy + 29}" fill="{P["mustard"]}" font-size="9" font-weight="700" letter-spacing="1.5" font-family="{FONT}">LIVE</text>')
@@ -319,9 +319,10 @@ def _tooltips(days, grid, stats, x0, y0, pitch, R, gx, gw, cycle, quiet_end, hol
     return "".join(out)
 
 
-def _engraved(x, y, s, size, fill, spacing):
-    return (f'<text x="{x + 1}" y="{y + 1.3}" fill="#000" fill-opacity=".8" font-size="{size}" font-weight="700" letter-spacing="{spacing}" font-family="{FONT}">{escape(s)}</text>'
-            f'<text x="{x}" y="{y}" fill="{fill}" font-size="{size}" font-weight="700" letter-spacing="{spacing}" font-family="{FONT}">{escape(s)}</text>')
+def _engraved(x, y, s, size, fill, spacing, stencil=False):
+    attr = ' data-font="stencil"' if stencil else ' font-weight="700"'
+    return (f'<text x="{x + 1}" y="{y + 1.3}" fill="#000" fill-opacity=".8" font-size="{size}"{attr} letter-spacing="{spacing}" font-family="{FONT}">{escape(s)}</text>'
+            f'<text x="{x}" y="{y}" fill="{fill}" font-size="{size}"{attr} letter-spacing="{spacing}" font-family="{FONT}">{escape(s)}</text>')
 
 
 def _defs(pitch, R, cols):

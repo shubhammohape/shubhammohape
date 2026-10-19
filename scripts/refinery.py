@@ -69,7 +69,8 @@ def compact(svg):
     return re.sub(r'\b(points|d|values)="([^"]*)"', tidy, svg)
 
 
-def refinery_svg(results, checks, repos, ts, ths=None, animate=True, W=900, H=545, check=False, yaw_deg=None):
+def refinery_svg(results, checks, repos, ts, ths=None, animate=True, W=900, H=545, check=False, yaw_deg=None,
+                 name="SHUBHAM MOHAPE", tagline="data engineer · pipelines, scraping, ML ops · Mumbai"):
     reset_ids()
     st = {r["name"]: r for r in results}
     s = {k: st[k]["status"] for k in TASKS}
@@ -292,7 +293,7 @@ def refinery_svg(results, checks, repos, ts, ths=None, animate=True, W=900, H=54
     word = {"ok": "all systems nominal", "warn": "running with warnings", "fail": "unit down"}[overall]
     flare_word = ("pilot light only", "flare burning off warnings", "flare at full burn")[flare_level]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
-           f'aria-label="A realistic 3D isometric data refinery that is this profile\'s own nightly pipeline: GitHub API tower, bronze vat, clean filter, '
+           f'aria-label="{escape(name.title())}: {escape(tagline)}. A realistic 3D isometric data refinery that is this profile\'s own nightly pipeline: GitHub API tower, bronze vat, clean filter, '
            f'silver vat, enrich column, gold tank, a serve mast and a flare stack. Status: {word}; {flare_word}. Last run {escape(ts)}.">',
            defs_svg(),
            f'<rect width="{W}" height="{H}" rx="14" fill="url(#g_bg)"/>']
@@ -304,8 +305,9 @@ def refinery_svg(results, checks, repos, ts, ths=None, animate=True, W=900, H=54
     out.append(f'<rect width="{W}" height="{H}" rx="14" fill="url(#g_vig)"/>')
     out.append(sc.tags_svg(f))
     out.append(f'<rect width="{W}" height="{H}" rx="14" fill="none" stroke="{P["border"]}"/>')
-    out.append(txt(28, 44, "THE REFINERY", P["mustard"], 26, "start", "700", extra='letter-spacing="5"'))
-    out.append(txt(30, 64, "a data pipeline that builds this page. this is its last run.", P["muted"], 11))
+    out.append(txt(28, 50, name, P["mustard"], 34, "start", "400", extra='data-font="stencil" letter-spacing="4"'))
+    out.append(txt(30, 73, tagline, P["text"], 12.5))
+    out.append(txt(30, 91, "this profile is a pipeline. below is its last run.", P["muted"], 10.5))
     out.append(txt(W - 28, 40, f"{GLYPH[overall]} {word}", P[overall], 12, "end", "700"))
     out.append(txt(W - 28, 58, f"last run {ts}", P["muted"], 10.5, "end"))
     lx = 28
