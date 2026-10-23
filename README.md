@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="assets/refinery.svg" width="100%" alt="Shubham Mohape: data engineer · pipelines, scraping, ML ops · Mumbai. A realistic 3D isometric data refinery that is this profile's own nightly pipeline: GitHub API tower, bronze vat, clean filter, silver vat, enrich column, gold tank, a serve mast and a flare stack. Status: all systems nominal; pilot light only. Last run 2026-10-22 07:38 UTC.">
+<img src="assets/refinery.svg" width="100%" alt="Shubham Mohape: data engineer · pipelines, scraping, ML ops · Mumbai. A realistic 3D isometric data refinery that is this profile's own nightly pipeline: GitHub API tower, bronze vat, clean filter, silver vat, enrich column, gold tank, a serve mast and a flare stack. Status: all systems nominal; pilot light only. Last run 2026-10-23 07:35 UTC.">
 <img src="assets/control.svg" width="100%" alt="Control room: four data-quality gauges (freshness, volume, schema, uniqueness) and an LED history of each pipeline task over the last 30 runs.">
 
 <img src="assets/about.svg" width="100%" alt="About Shubham Mohape. I design, build and maintain data pipelines, scrape the awkward corners of the web, and turn messy datasets into something people can act on. Day to day I raise PRs and review even more of them: small, focused changes and honest feedback. Off the clock: gaming, volleyball, and protecting work-life balance. B.E. Computer Engineering, 2022.">
 
-<img src="assets/contributions.svg" width="100%" alt="A flip-disc display board showing 1107 contributions over the last year as a heat map of 369 discs, then flipping to messages: 1107/YEAR, 239 DAYS, PEAK 19, SHUBHAM. Busiest weekday THU, best day 19, 239 active days, longest streak 6 days.">
+<img src="assets/contributions.svg" width="100%" alt="A flip-disc display board showing 1111 contributions over the last year as a heat map of 370 discs, then flipping to messages: 1111/YEAR, 240 DAYS, PEAK 19, SHUBHAM. Busiest weekday THU, best day 19, 240 active days, longest streak 6 days.">
 
 <img src="assets/desk.svg" width="100%" alt="How I work: in the last 12 months I raised 304 pull requests and reviewed 456; 87% of mine merge, median time to merge 14 hours, a typical PR is +36 −7 lines across 2 files, and I review about 1.5 PRs for every one I raise.">
 
