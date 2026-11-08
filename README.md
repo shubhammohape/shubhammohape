@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/refinery.svg" width="100%" alt="Shubham Mohape: data engineer · pipelines, scraping, ML ops · Mumbai. A realistic 3D isometric data refinery that is this profile's own nightly pipeline: GitHub API tower, bronze vat, clean filter, silver vat, enrich column, gold tank, a serve mast and a flare stack. Status: all systems nominal; pilot light only. Last run 2026-11-07 08:50 UTC.">
+<img src="assets/refinery.svg" width="100%" alt="Shubham Mohape: data engineer · pipelines, scraping, ML ops · Mumbai. A realistic 3D isometric data refinery that is this profile's own nightly pipeline: GitHub API tower, bronze vat, clean filter, silver vat, enrich column, gold tank, a serve mast and a flare stack. Status: running with warnings; flare burning off warnings. Last run 2026-11-08 09:02 UTC.">
 <img src="assets/control.svg" width="100%" alt="Control room: four data-quality gauges (freshness, volume, schema, uniqueness) and an LED history of each pipeline task over the last 30 runs.">
 
 <img src="assets/about.svg" width="100%" alt="About Shubham Mohape. I design, build and maintain data pipelines, scrape the awkward corners of the web, and turn messy datasets into something people can act on. Day to day I raise PRs and review even more of them: small, focused changes and honest feedback. Off the clock: gaming, volleyball, and protecting work-life balance. B.E. Computer Engineering, 2022.">
