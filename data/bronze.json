@@ -1,41 +1,6 @@
 {
  "calendar": [
   {
-   "count": 2,
-   "date": "2025-11-16",
-   "level": 1
-  },
-  {
-   "count": 5,
-   "date": "2025-11-17",
-   "level": 2
-  },
-  {
-   "count": 6,
-   "date": "2025-11-18",
-   "level": 2
-  },
-  {
-   "count": 1,
-   "date": "2025-11-19",
-   "level": 1
-  },
-  {
-   "count": 0,
-   "date": "2025-11-20",
-   "level": 0
-  },
-  {
-   "count": 1,
-   "date": "2025-11-21",
-   "level": 1
-  },
-  {
-   "count": 0,
-   "date": "2025-11-22",
-   "level": 0
-  },
-  {
    "count": 0,
    "date": "2025-11-23",
    "level": 0
@@ -1854,6 +1819,11 @@
    "count": 0,
    "date": "2026-11-21",
    "level": 0
+  },
+  {
+   "count": 0,
+   "date": "2026-11-22",
+   "level": 0
   }
  ],
  "events": [],
@@ -2074,8 +2044,8 @@
    "id": 822725851,
    "language": "Python",
    "name": "shubhammohape",
-   "pushed_at": "2026-11-20T10:04:03Z",
-   "size": 488,
+   "pushed_at": "2026-11-21T09:52:48Z",
+   "size": 491,
    "stargazers_count": 0,
    "topics": []
   },
