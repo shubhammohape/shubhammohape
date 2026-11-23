@@ -1,15 +1,5 @@
 [
  {
-  "ts": "2026-10-24 07:20 UTC",
-  "tasks": {
-   "extract": "ok",
-   "clean": "ok",
-   "enrich": "ok",
-   "load": "ok",
-   "serve": "ok"
-  }
- },
- {
   "ts": "2026-10-25 07:37 UTC",
   "tasks": {
    "extract": "ok",
@@ -291,6 +281,16 @@
  },
  {
   "ts": "2026-11-22 09:49 UTC",
+  "tasks": {
+   "extract": "ok",
+   "clean": "ok",
+   "enrich": "ok",
+   "load": "ok",
+   "serve": "ok"
+  }
+ },
+ {
+  "ts": "2026-11-23 10:49 UTC",
   "tasks": {
    "extract": "ok",
    "clean": "ok",
